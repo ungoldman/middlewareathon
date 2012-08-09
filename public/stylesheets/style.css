@@ -1,0 +1,5 @@
+html{background:#ffffff url(/images/cookie.jpg) right bottom fixed no-repeat;}html.hotdog{background:url(/images/puter.gif) center center fixed no-repeat;background-size:cover;}html.hotdog #wrap{background:none;overflow:hidden;text-indent:-999em;}
+body{font:14px "Lucida Sans","Lucida Grande",Helvetica,Arial,sans-serif;margin:0;padding:0;}
+html,body,#wrap{min-height:100%;}
+a{color:#1E90FF;}a:hover{color:#ff0000;}
+#wrap{background:rgba(255, 255, 255, 0.7);padding:15px 30px 15px 45px;width:330px;}#wrap .relish{padding:15px 0;height:220px;width:270px;}#wrap .relish:hover{background:url(/images/surfin_hotdog.gif) 0 0 no-repeat;background-size:cover;}#wrap .relish:hover img{visibility:hidden;}
