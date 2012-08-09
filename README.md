@@ -12,7 +12,8 @@ Middleware so far:
   * session
   * favicon
   * static
+  * staticCache
 
 * third-party
-  * less-middleware
   * express-partials
+  * connect-assets
