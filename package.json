@@ -14,5 +14,20 @@
   },
   "description": "Middleware demo for Peter Wooley's Node.js class",
   "main": "app.js",
-  "license": "MIT"
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://ngoldman.mit-license.org/"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git://github.com/ngoldman/middlewareathon.git"
+    }
+  ],
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
 }
