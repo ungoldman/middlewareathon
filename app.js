@@ -23,16 +23,17 @@ app
   .set('port', process.env.PORT || 3000)
   .set('views', __dirname + '/views')
   .set('view engine', 'ejs')
-  .use(express.bodyParser())
-  .use(express.methodOverride())
 
   /**
    * Connect middleware.
    */
 
-  .use(express.favicon(__dirname + '/public/favicon.ico', { maxAge: 2592000000 }))
+  .use(express.bodyParser())
+  .use(express.methodOverride())
   .use(express.cookieParser('advice dog'))
   .use(express.session({ key: 'woof', cookie: { maxAge: 10000 }}))
+  .use(express.favicon(__dirname + '/public/favicon.ico', { maxAge: 2592000000 }))
+  .use(express.static( __dirname + '/public' ))
 
   /**
    * Third-party middleware.
@@ -41,8 +42,9 @@ app
   .use(less({ src: __dirname + '/public', compress: true }))
   .use(partials())
 
-  .use(app.router)
-  .use(express.static( __dirname + '/public' ))
+  /**
+   * Environment-specific configs.
+   */
 
   .configure('development', function(){
     app
@@ -55,6 +57,8 @@ app
       .use(express.logger())
       .use(express.errorHandler())
   })
+
+  .use(app.router)
 
   // app.get() returns Router object
   .get('/', routes.index)
