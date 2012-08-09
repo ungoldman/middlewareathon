@@ -20,7 +20,7 @@ window.onload = function(){
     document.getElementsByTagName('html')[0].className = "";
     surfrock.pause();
   }
-  expires = 10;
+  expires = 23;
   b = document.getElementById('expires');
   c = b.childNodes[1];
   c.innerHTML = expires;

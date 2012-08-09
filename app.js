@@ -12,7 +12,7 @@ var express = require('express')
    */
 
   , partials = require('express-partials')
-  , less = require('less-middleware')
+  , assets = require('connect-assets')
   ;
 
 /**
@@ -31,16 +31,17 @@ app
   .use(express.bodyParser())
   .use(express.methodOverride())
   .use(express.cookieParser('advice dog'))
-  .use(express.session({ key: 'woof', cookie: { maxAge: 10000 }}))
+  .use(express.session({ key: 'woof', cookie: { maxAge: 23000 }}))
   .use(express.favicon(__dirname + '/public/favicon.ico', { maxAge: 2592000000 }))
+  .use(express.staticCache())
   .use(express.static( __dirname + '/public' ))
 
   /**
    * Third-party middleware.
    */
 
-  .use(less({ src: __dirname + '/public', compress: true }))
   .use(partials())
+  .use(assets())
 
   /**
    * Environment-specific configs.
